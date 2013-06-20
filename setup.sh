@@ -64,7 +64,7 @@ installExtrasTask ()
     grep -q -r '^innodb_file_per_table' /etc/mysql/my.cnf         ||
     (
         sudo sed -i -e "s|^\[mysqld\]$|[mysqld]\ninnodb_file_per_table\n|" /etc/mysql/my.cnf
-        sudo restart mysql
+        sudo mysql restart
     )
 
 }
